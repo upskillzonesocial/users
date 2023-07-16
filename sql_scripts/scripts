@@ -1,0 +1,13 @@
+create table user_registration (username varchar unique,
+firstname  varchar,
+lastname varchar,
+dob date,
+pwd varchar,
+confirm_password varchar,
+email varchar unique,
+phone bigint unique,
+address varchar,
+category varchar)
+
+
+select * from public.user_registration
