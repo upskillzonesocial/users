@@ -1,10 +1,18 @@
-import smtplib, ssl
-from email_configuration import smtp_server, port, sender_email, password, receiver_email, message
+import smtplib
+import ssl
 
+from email_configuration import *
+
+sender = SENDER_EMAIL
+receivers = RECEIVER_EMAIL
+message = MESSAGE
 context = ssl.create_default_context()
-with smtplib.SMTP(smtp_server, port) as server:
-    server.ehlo()  # Can be omitted
-    server.starttls(context=context)
-    server.ehlo()  # Can be omitted
-    server.login(sender_email, password)
-    server.sendmail(sender_email, receiver_email, message)
+
+
+def send_email(too_email=None, email_body=""):
+    if too_email is None:
+        too_email = []
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+        server.starttls(context=context)
+        server.login(sender, PASSWORD)
+        server.sendmail(sender, too_email, email_body)
