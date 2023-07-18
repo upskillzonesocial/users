@@ -1,11 +1,27 @@
 # email configurations
 
-port = 587  # For starttls
-smtp_server = "smtp.gmail.com"
-sender_email = "komalsaikiran05@gmail.com"
-receiver_email = ["komalsaikiran05@gmail.com", "ushavenkateswararao100@gmail.com"]
-password = "nssonhmvdadwylxd"
-message = """\
+SMTP_PORT = 587  # For starttls
+SMTP_SERVER= "smtp.gmail.com"
+SENDER_EMAIL = "komalsaikiran05@gmail.com"
+RECEIVER_EMAIL = ["komalsaikiran05@gmail.com", "ushavenkateswararao100@gmail.com"]
+PASSWORD = "nssonhmvdadwylxd"
+MESSAGE = """\
 Subject: Hi there
 
-This message is sent from Python."""
+New User has been Posted successfully in your table ."""
+DELETE_MESSAGE = """
+User has been deleted successfully from your table 
+
+"""
+UPDATE_MESSAGE = """
+User has been updated successfully
+
+"""
+GET_ALL_MESSAGE = """
+Some one is checking all users information from the table
+"""
+GET_SINGLE_MESSAGE = """
+Some one is checking single user information from the table
+"""
+print("This is smtp_port---", SMTP_PORT)
+print("This is email_password", PASSWORD)

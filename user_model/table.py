@@ -1,7 +1,6 @@
 from sqlalchemy import Column, String, Integer, Date, VARCHAR
 from sqlalchemy.ext.declarative import declarative_base
 
-
 Base = declarative_base()
 
 
@@ -18,3 +17,5 @@ class User_Registration_Form(Base):
     ph = Column("phone", Integer)
     add = Column("address", VARCHAR)
     category = Column("category", String)
+    created_date = Column("created_datetime", Date)
+
